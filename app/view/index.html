@@ -29,7 +29,7 @@
         <p style="color: #3F51B5; font-size: 34px">&nbsp;登录助手</p>
         <div class="mdui-typo">
           <div class="mdui-panel" mdui-panel>
-            <div class="mdui-panel-item">
+            <div class="mdui-panel-item mdui-panel-item-open">
               <div class="mdui-panel-item-header">
                 <div class="mdui-panel-item-title">使用说明</div>
                 <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
@@ -47,30 +47,75 @@
           </div>
         </div>
 
+       <!-- 最新验证码 -->
+       <div class="card-body mdui-table-fluid mdui-m-t-2">
+            <table class="mdui-table" style="border: none;">
+                <thead>
+                    <tr>
+                        <td><font size ="3"><b>最新验证码</b></font></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>时间</th>
+                        <th>验证码</th>
+                        <th>账户</th>
+                    </tr>
+                </thead>
+                      {volist name="msg_new" id="content"}
+                <tbody>
+                    <tr>
+                        <td>{$content.receive_time}</td>
+                        <td>{$content.snippet}</td>
+                        <td>{$content.correspondence}</td>
+                    </tr>
+                      {/volist}
+                </tbody>
+            </table>
+        </div>
+        </div>
+        
+        <!-- 历史验证码 -->
+        <div class="mdui-typo">
+          <div class="mdui-panel" mdui-panel>
+            <div class="mdui-panel-item">
+              <div class="mdui-panel-item-header">
+                <div class="mdui-panel-item-title">历史验证码</div>
+                <i class="mdui-panel-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+              </div>
+              <div class="mdui-panel-item-body">
+                <div class="card-body mdui-table-fluid mdui-m-t-2">
+                    <table class="mdui-table" style="border: none;">
+                    <thead>
+                      <tr>
+                        <th>时间</th>
+                        <th>账户</th>
+                        <th>验证码</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {volist name="msg" id="content"}
+                      <tr>
+                        <td>{$content.receive_time}</td>
+                        <td>{$content.correspondence}</td>
+                        <td>{$content.snippet}</td>
+                      </tr>
+                      {/volist}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
         <div class="card-body mdui-table-fluid mdui-m-t-2">
-          <table class="mdui-table" style="border: none;">
-            <thead>
-              <tr>
-                <th>时间</th>
-                <th>账户</th>
-                <th>验证码</th>
-              </tr>
-            </thead>
-            <tbody>
-              {volist name="msg" id="content"}
-              <tr>
-                <td>{$content.receive_time}</td>
-                <td>{$content.correspondence}</td>
-                <td>{$content.snippet}</td>
-              </tr>
-              {/volist}
-            </tbody>
-          </table>
+          
         </div>
 
         <div class="mdui-typo mdui-m-t-2">
           <p align="center">
-            <a href="https://github.com/AppleIdLoginHelper/LoginHelper" target="view_window">staff</a>
+            <a href="https://colacloud.online/" target="view_window">可乐云在线官网</a>
           </p>
         </div>
 

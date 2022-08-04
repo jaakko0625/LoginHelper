@@ -112,7 +112,12 @@ class Index extends BaseController
         ->order('receive_time', 'desc')
         ->select();
         
+        $msg_new = MailContent::limit(1)
+        ->order('receive_time', 'desc')
+        ->select();
+        
         View::assign('msg', $msg);
+        View::assign('msg_new', $msg_new);
         View::assign('auth_refresh', Env::get('OTHER.AUTO_REFRESH'));
         View::assign('refresh_interval', Env::get('OTHER.REFRESH_INTERVAL'));
         return View::fetch('../app/view/index.html');
